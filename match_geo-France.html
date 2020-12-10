@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/matchgame.css">
+                <!-- JS, Popper.js, and jQuery -->
+                <script
+                src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+                <script
+                src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+                integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+                crossorigin="anonymous"></script>
+                <script
+                src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+                integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+                crossorigin="anonymous" ></script>
+
+    
+            <!-- CSS only -->
+            <link
+                rel="stylesheet"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+                integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+                crossorigin="anonymous"/>
+    <title>Lv1 - France</title>
+</head>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-transparent font-weight-bold" style="margin: 0.8vw;">
+        <a class="navbar-brand" href="#">
+        <img src="images/logo1.png" width="248" height="65" alt="" loading="lazy" />
+        </a>
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+        class="collapse navbar-collapse"
+        id="navbarNavDropdown"
+        style="
+            position: absolute;
+            right: 10vw;
+            font-family: Arial Rounded MT Bold;
+            font-size: 1.5vw;">
+            <ul class="navbar-nav">
+                <li class="nav-item" style="margin-left: 2vw">
+                    <a class="nav-link1" href="home.php">Home <span class="sr-only">(current)</span></a>
+                </li>
+            <div style="margin-left: 3vw">
+                <li class="nav-item dropdown">
+                    <a
+                    class="nav-link1 dropdown-toggle"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    >
+                    Games
+                    </a>
+                    <div
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                    >
+                    <a class="dropdown-item" href="math.php">Math</a>
+                    <a class="dropdown-item" href="art.php">Art</a>
+                    <a class="dropdown-item" href="science.php">Science</a>
+                    <a class="dropdown-item" href="geographic.php">Geographic</a>
+                    </div>
+                </li>
+            </div>
+    
+            <li class="nav-item" style="margin-left: 3vw">
+                <a class="nav-link1" href="portfolio.php">Profile</a>
+            </li>
+            <li class="nav-item" style="margin-left: 3vw">
+                <a class="nav-link1" href="about.php">About</a>
+            </li>
+            <form class="form-inline">
+                <button
+                    class="btn btn-sm btn-outline-secondary"
+                    type="button"
+                    style="
+                    font-family: Arial Rounded MT Bold;
+                    font-size: 1vw;
+                    margin-left: 3vw;
+                    "
+                >
+                <a href="login.php?action=logout" style=" text-decoration:none; color: #999999;">Logout</a>
+                </button>
+            </form>
+            </ul>
+        </div>
+    </nav>
+    <div style="text-align: center; margin-top: 200px;">
+        <h2 style="color: #6354BD; font-size: 40px;">How much do you know about France?</h2>
+        <div>
+            <p style="margin-top: 50px; font-size: 18px;">Choose the correct answer according to the question. Check the map,
+                it may help you find the correct answer.</p>
+        </div>
+    </div>
+
+    <div class="maindiv">
+        <div class="left">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5661917.656597812!2d-2.445269881182797!3d46.138633244404126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd54a02933785731%3A0x6bfd3f96c747d9f7!2sFrance!5e0!3m2!1sen!2sau!4v1559608340919!5m2!1sen!2sau" width="700" height="420" frameborder="0" style="border:0" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="answer_area">
+                <div class="drag_area" id="drag_area">
+                    <div class="q1" id="q1">
+                        <div id="txt1" draggable="true" class="dragable txt txt1">
+                            England
+                        </div>
+                        <div id="txt2" draggable="true" class="dragable txt txt2">
+                            Germany
+                        </div>
+                        <div id="txt3" draggable="true" class="dragable txt txt3">
+                            France
+                        </div>
+                    </div>
+                    <div class="q2" id="q2">
+                        <div id="txt4" draggable="true" class="dragable txt txt4">
+                            Asia
+                        </div>
+                        <div id="txt5" draggable="true" class="dragable txt txt5">
+                            Europe
+                        </div>
+                        <div id="txt6" draggable="true" class="dragable txt txt6">
+                            Africa
+                        </div>
+                    </div>
+                    <div class="q3" id="q3">
+                        <div id="txt7" draggable="true" class="dragable txt txt7">
+                            Pacific Ocean
+                        </div>
+                        <div id="txt8" draggable="true" class="dragable txt txt8">
+                            Indian Ocean
+                        </div>
+                        <div id="txt9" draggable="true" class="dragable txt txt9">
+                            North Atlantic Ocean
+                        </div>
+                    </div>
+                </div>
+    
+
+            </div>
+
+        </div>
+
+        <div class="right">
+            <div class="drop_area" id="drop_area">
+                <div class="part" id="part1">
+                    <div class="text">
+                        <h3>Which is the correct country name? </h3>
+                    </div>
+                    <div class="drop" id="drop1">
+
+                    </div>
+                </div>
+                <div class="part" id="part2">
+                    <div class="text">
+                        <h3>Which is the correct area for this country? &ensp; </h3>
+                    </div>
+                    <div class="drop" id="drop2">
+
+                    </div>
+                </div>
+                <div class="part" id="part3">
+                    <div class="text">
+                        <h3>Which is the correct Ocean in this country left?</h3>
+                    </div>
+                    <div class="drop" id="drop3">
+
+                    </div>
+                </div>
+            </div>  
+            <div>
+                <a href="3-geo-game-level.php"><button>Back</button></a>
+                <a href="3-geo-game-level.php?action=increase"><button id="nextbutton" style="visibility: hidden;">Complete</button></a>
+            </div>
+        </div>
+        <script>
+            var mark = 0;
+            var countryarray = ["txt1","txt2","txt3"];
+            var contarray = ["txt4","txt5","txt6"];
+            var oceanarray = ["txt7","txt8","txt9"];
+            var total = 0;
+            let txtObj = document.getElementsByClassName('txt')
+            for ( let i = 0; i < txtObj.length; i++) {
+                txtObj[i].ondragstart = handle_start
+                txtObj[i].ondrag = handle_drag
+                txtObj[i].ondragend = handle_end
+            }
+            function handle_start(e) {
+                e.dataTransfer.setData('Text', e.target.id)
+                console.log('handle_start-拖动开始')
+            }
+            function handle_drag(e) {
+                console.log('handle_drag-拖动中')
+            }
+            function handle_end(e) {
+                console.log('handle_end-拖动结束')
+            }
+
+            let target_1 = document.getElementById('drop1')
+            target_1.ondragenter = handle_enter
+            target_1.ondragover = handle_over
+            target_1.ondragleave = handle_leave
+            target_1.ondrop = handle_drop
+
+            let target_2 = document.getElementById('drop2')
+            target_2.ondragenter = handle_enter
+            target_2.ondragover = handle_over
+            target_2.ondragleave = handle_leave
+            target_2.ondrop = handle_drop_2
+
+            let target_3 = document.getElementById('drop3')
+            target_3.ondragenter = handle_enter
+            target_3.ondragover = handle_over
+            target_3.ondragleave = handle_leave
+            target_3.ondrop = handle_drop_3
+
+
+            function handle_enter(e) {
+                e.preventDefault()
+                console.log('handle_enter-进入目的地')
+            }
+            function handle_over(e) {
+                e.preventDefault()
+                let returnObj = e.dataTransfer.getData('Text')
+                console.log(returnObj +'-handle_over-在目的地范围内')
+            }
+            function handle_leave(e) {
+                e.preventDefault()
+                let returnObj = e.dataTransfer.getData('Text')
+                console.log(returnObj)
+                console.log('handle_leave-没有放下就离开目的地')
+            }
+            function handle_drop(e) {
+                e.stopPropagation();
+                e.preventDefault()
+                let returnObj = e.dataTransfer.getData('Text')
+                console.log(returnObj + '-handle_drop-在目的地区释放')
+                e.target.appendChild(document.getElementById(returnObj))
+                if (returnObj) {
+                    
+                    if (countryarray.indexOf(returnObj) == -1){
+                        alert("This is not a Country name. Please try again!");
+                        window.location.reload();
+                    }
+
+                    total += 1;
+                    console.log(total);
+                    if (returnObj == "txt1"){
+                        document.getElementById("txt2").draggable = false;
+                        document.getElementById("txt2").style.textDecoration = "line-through";
+                        document.getElementById("txt2").style.cursor = "default";
+                        document.getElementById("txt2").style.color = "black";
+                        document.getElementById("txt3").draggable = false;
+                        document.getElementById("txt3").style.textDecoration = "line-through";
+                        document.getElementById("txt3").style.cursor = "default";
+                        document.getElementById("txt3").style.color = "black";
+                        document.getElementById("drop1").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop1").style.color = "white";
+                        document.getElementById("drop1").style.fontSize = "36px";
+                    }
+                    if (returnObj == "txt3"){
+                        mark += 10;
+                        document.getElementById("txt1").draggable = false;
+                        document.getElementById("txt1").style.textDecoration = "line-through";
+                        document.getElementById("txt1").style.cursor = "default";
+                        document.getElementById("txt1").style.color = "black";
+                        document.getElementById("txt2").draggable = false;
+                        document.getElementById("txt2").style.textDecoration = "line-through";
+                        document.getElementById("txt2").style.cursor = "default";
+                        document.getElementById("txt2").style.color = "black";
+                        document.getElementById("drop1").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop1").style.color = "white";
+                        document.getElementById("drop1").style.fontSize = "36px";
+                    }
+
+
+                    if (returnObj == "txt2"){
+                        document.getElementById("txt3").draggable = false;
+                        document.getElementById("txt3").style.textDecoration = "line-through";
+                        document.getElementById("txt3").style.cursor = "default";
+                        document.getElementById("txt3").style.color = "black";
+                        document.getElementById("txt1").draggable = false;
+                        document.getElementById("txt1").style.textDecoration = "line-through";
+                        document.getElementById("txt1").style.cursor = "default";
+                        document.getElementById("txt1").style.color = "black";
+                        document.getElementById("drop1").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop1").style.color = "white";
+                        document.getElementById("drop1").style.fontSize = "36px";
+                    }
+
+                    if (mark == 30){
+                        alert("Congrats. You won!\nYou can move to the next level now.")
+                        document.getElementById("nextbutton").style.visibility="visible"
+                    }
+                    if (total == 3) {
+                        if (mark<30 && mark >0) {
+                            alert("You got a part right. Please try again!");
+                            window.location.reload();
+                        }
+                        if (mark == 0) {
+                            alert("Sorry you are wrong. Try it again.");
+                            window.location.reload();
+                        }
+                    }
+
+                }
+            }
+            function handle_drop_2(e) {
+                e.stopPropagation();
+                e.preventDefault()
+                let returnObj = e.dataTransfer.getData('Text')
+                console.log(returnObj + '-handle_drop-在目的地区释放')
+                e.target.appendChild(document.getElementById(returnObj))
+                if (returnObj) {
+                    if (contarray.indexOf(returnObj) == -1){
+                        alert("This is not a Continent name. Please try again!");
+                        window.location.reload();
+                    }
+
+                    total += 1;
+
+                    if (returnObj == "txt4"){
+                        document.getElementById("txt5").draggable = false;
+                        document.getElementById("txt5").style.textDecoration = "line-through";
+                        document.getElementById("txt5").style.cursor = "default";
+                        document.getElementById("txt5").style.color = "black";
+                        document.getElementById("txt6").draggable = false;
+                        document.getElementById("txt6").style.textDecoration = "line-through";
+                        document.getElementById("txt6").style.cursor = "default";
+                        document.getElementById("txt6").style.color = "black";
+                        document.getElementById("drop2").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop2").style.color = "white";
+                        document.getElementById("drop2").style.fontSize = "36px";
+                    }
+                    if (returnObj == "txt5"){
+                        mark += 10;
+                        document.getElementById("txt4").draggable = false;
+                        document.getElementById("txt4").style.textDecoration = "line-through";
+                        document.getElementById("txt4").style.cursor = "default";
+                        document.getElementById("txt4").style.color = "black";
+                        document.getElementById("txt6").draggable = false;
+                        document.getElementById("txt6").style.textDecoration = "line-through";
+                        document.getElementById("txt6").style.cursor = "default";
+                        document.getElementById("txt6").style.color = "black";
+                        document.getElementById("drop2").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop2").style.color = "white";
+                        document.getElementById("drop2").style.fontSize = "36px";
+                    }
+
+
+                    if (returnObj == "txt6"){
+                        
+                        document.getElementById("txt4").draggable = false;
+                        document.getElementById("txt4").style.textDecoration = "line-through";
+                        document.getElementById("txt4").style.cursor = "default";
+                        document.getElementById("txt4").style.color = "black";
+                        document.getElementById("txt5").draggable = false;
+                        document.getElementById("txt5").style.textDecoration = "line-through";
+                        document.getElementById("txt5").style.cursor = "default";
+                        document.getElementById("txt5").style.color = "black";
+                        document.getElementById("drop2").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop2").style.color = "white";
+                        document.getElementById("drop2").style.fontSize = "36px";
+                    }
+
+
+                    if (mark == 30){
+                        alert("Congrats. You won!\nYou can move to the next level now.")
+                        document.getElementById("nextbutton").style.visibility="visible"
+                    }
+                    if (total == 3) {
+                        if (mark<30 && mark >0) {
+                            alert("You got a part right. Please try again!");
+                            window.location.reload();
+                        }
+                        if (mark == 0) {
+                            alert("Sorry you are wrong. Try it again.");
+                            window.location.reload();
+                        }
+                    }
+
+                }
+            }
+            function handle_drop_3(e) {
+                e.stopPropagation();
+                e.preventDefault()
+                let returnObj = e.dataTransfer.getData('Text')
+                console.log(returnObj + '-handle_drop-在目的地区释放')
+                e.target.appendChild(document.getElementById(returnObj))
+                if (returnObj) {
+                    if (oceanarray.indexOf(returnObj) == -1){
+                        alert("This is not an Ocean name. Please try again!");
+                        window.location.reload();
+                    }
+
+                    total += 1;
+
+                    if (returnObj == "txt7"){
+                        document.getElementById("txt8").draggable = false;
+                        document.getElementById("txt8").style.textDecoration = "line-through";
+                        document.getElementById("txt8").style.cursor = "default";
+                        document.getElementById("txt8").style.color = "black";
+                        document.getElementById("txt9").draggable = false;
+                        document.getElementById("txt9").style.textDecoration = "line-through";
+                        document.getElementById("txt9").style.cursor = "default";
+                        document.getElementById("txt9").style.color = "black";
+                        document.getElementById("drop3").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop3").style.color = "white";
+                        document.getElementById("drop3").style.fontSize = "28px";
+                    }
+                    if (returnObj == "txt8"){
+                        document.getElementById("txt7").draggable = false;
+                        document.getElementById("txt7").style.textDecoration = "line-through";
+                        document.getElementById("txt7").style.cursor = "default";
+                        document.getElementById("txt7").style.color = "black";
+                        document.getElementById("txt9").draggable = false;
+                        document.getElementById("txt9").style.textDecoration = "line-through";
+                        document.getElementById("txt9").style.cursor = "default";
+                        document.getElementById("txt9").style.color = "black";
+                        document.getElementById("drop3").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop3").style.color = "white";
+                        document.getElementById("drop3").style.fontSize = "28px";
+                    }
+
+
+                    if (returnObj == "txt9"){
+                        mark += 10;
+                        console.log(mark);
+                        document.getElementById("txt7").draggable = false;
+                        document.getElementById("txt7").style.textDecoration = "line-through";
+                        document.getElementById("txt7").style.cursor = "default";
+                        document.getElementById("txt7").style.color = "black";
+                        document.getElementById("txt8").draggable = false;
+                        document.getElementById("txt8").style.textDecoration = "line-through";
+                        document.getElementById("txt8").style.cursor = "default";
+                        document.getElementById("txt8").style.color = "black";
+                        document.getElementById("drop3").style.backgroundColor = " #6354BD";
+                        document.getElementById("drop3").style.color = "white";
+                        document.getElementById("drop3").style.fontSize = "28px";
+                    }
+                    if (mark == 30){
+                        alert("Congrats. You won!\nYou can move to the next level now.")
+                        document.getElementById("nextbutton").style.visibility="visible"
+                    }
+
+                    if (total == 3) {
+                        if (mark<30 && mark >0) {
+                            alert("You got a part right. Please try again!");
+                            window.location.reload();
+                        }
+                        if (mark == 0) {
+                            alert("Sorry you are wrong. Try it again.");
+                            window.location.reload();
+                        }
+                    }
+
+                }
+            }
+        </script>
+    </div>
+
+</body>
+</html>
